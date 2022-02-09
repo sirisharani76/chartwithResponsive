@@ -1,24 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+
+import Navigation from './components/Navigation';
+import Formfill from './components/Formfill';
+import Chart from './components/Chart';
+
+import { Row, Col , Container } from 'react-bootstrap';
+import Cards from './components/Cards';
+
 
 function App() {
+ 
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      
+      <Navigation></Navigation>
+
+      <Container className="mt-3">
+      <Row >
+      <Col sm={6} lg={9}>
+      <Chart></Chart>
+      </Col>
+      
+      <Col sm={6} lg={3}>
+      <Formfill></Formfill>
+      </Col>
+      </Row>
+      </Container>
+
+      <Cards></Cards>
+
+      
+      
     </div>
+
   );
 }
 
